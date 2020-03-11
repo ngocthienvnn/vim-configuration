@@ -27,10 +27,12 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=$unused_highlight
 BUFFER=": \$'*' 'foo'"
 
 expected_region_highlight=(
-  "3 6 $ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]" # $'*' - not a glob
-  "8 12 $ZSH_HIGHLIGHT_STYLES[single-quoted-argument]" # 'foo'
+  "1 1 builtin" # :
+  "3 6 default" # $'*'
+  "3 6 dollar-quoted-argument" # $'*' - not a glob
+  "8 12 default" # 'foo'
+  "8 12 single-quoted-argument" # 'foo'
 )

@@ -32,6 +32,5 @@ setopt interactive_comments
 BUFFER='# echo foo'
 
 expected_region_highlight=(
-  "1 1 ${(q-)ZSH_HIGHLIGHT_STYLES[comment]}" # #
-  "2 10 ${(q-)ZSH_HIGHLIGHT_STYLES[comment]}" # " echo foo"
+  "1 10 comment" # # echo foo
 )

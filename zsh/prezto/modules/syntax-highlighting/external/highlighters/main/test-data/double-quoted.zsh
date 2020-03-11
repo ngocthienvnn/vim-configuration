@@ -31,15 +31,12 @@ BUFFER=': "foo$bar:\`:\":\$:'
 BUFFER+=\\\\:\"
 
 expected_region_highlight=(
-  "3 6 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # "foo
-  "7 10 $ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]" # $bar
-  "11 11 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # :
-  "12 13 $ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]" # \`
-  "14 14 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # :
-  "15 16 $ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]" # \$
-  "17 17 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # :
-  "18 19 $ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]" # \"
-  "20 20 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # :
-  "21 22 $ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]" # \\
-  "23 24 $ZSH_HIGHLIGHT_STYLES[double-quoted-argument]" # :"
+  "1 1 builtin" # :
+  "3 24 default" # "foo$bar:\`:\":\$:\\:"
+  "3 24 double-quoted-argument" # "foo$bar:\`:\":\$:\\:"
+  "7 10 dollar-double-quoted-argument" # $bar
+  "12 13 back-double-quoted-argument" # \`
+  "15 16 back-double-quoted-argument" # \$
+  "18 19 back-double-quoted-argument" # \"
+  "21 22 back-double-quoted-argument" # \\
 )

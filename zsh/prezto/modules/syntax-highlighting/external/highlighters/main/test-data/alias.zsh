@@ -27,12 +27,11 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-alias alias1="unused expansion"
+alias alias1="ls"
 alias -s alias2="echo"
-alias1() {} # to check that it's highlighted as an alias, not as a function
+function alias1() {} # to check that it's highlighted as an alias, not as a function
 
-ZSH_HIGHLIGHT_STYLES[alias]=$unused_highlight
-BUFFER='x.alias2; alias1'
+BUFFER='x.alias2; alias1; alias2'
 
 # Set expected_region_highlight as a function of zsh version.
 #
@@ -41,11 +40,14 @@ BUFFER='x.alias2; alias1'
 # functionality is present, and skip verifying suffix-alias highlighting
 # if it isn't.
 expected_region_highlight=()
-if [[ "$(type -w x.alias2)" == *suffix* ]]; then
+if zmodload -e zsh/parameter || [[ "$(type -w x.alias2)" == *suffix* ]]; then
   expected_region_highlight+=(
-    "1 8 $ZSH_HIGHLIGHT_STYLES[suffix-alias]" # x.alias2
+    "1 8 suffix-alias" # x.alias2
   )
 fi
 expected_region_highlight+=(
-  "11 16 $ZSH_HIGHLIGHT_STYLES[alias]" # alias1
+  "9 9 commandseparator" # ;
+  "11 16 alias" # alias1
+  "17 17 commandseparator" # ;
+  "19 24 unknown-token" # alias2
 )

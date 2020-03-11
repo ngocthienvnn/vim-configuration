@@ -27,9 +27,9 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=$unused_highlight
 BUFFER='hello --world'
 
 expected_region_highlight=(
-  "7 13 $ZSH_HIGHLIGHT_STYLES[double-hyphen-option]" # --world
+  "1 5 unknown-token" # hello
+  "7 13 double-hyphen-option" # --world
 )

@@ -2,3 +2,5 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'moll/vim-bbye'
 Plugin 'neoclide/coc.nvim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'StanAngeloff/php.vim'
+

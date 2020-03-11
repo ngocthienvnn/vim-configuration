@@ -27,15 +27,13 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=$unused_highlight
 BUFFER=": \$'foo\xbar\udeadbeef\uzzzz'"
 
 expected_region_highlight=(
-  "3 7 $ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]" # $'foo
-  "8 11 $ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]" # \xba
-  "12 12 $ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]" # r
-  "13 18 $ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]" # \dead
-  "19 22 $ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]" # beef
-  "23 24 $ZSH_HIGHLIGHT_STYLES[unknown-token]" # \u
-  "25 29 $ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]" # zzzz'
+  "1 1 builtin" # :
+  "3 29 default" # $'foo\xbar\udeadbeef\uzzzz'
+  "3 29 dollar-quoted-argument" # $'foo\xbar\udeadbeef\uzzzz'
+  "8 11 back-dollar-quoted-argument" # \xba
+  "13 18 back-dollar-quoted-argument" # \dead
+  "23 24 unknown-token" # \u
 )

@@ -27,11 +27,11 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-ZSH_HIGHLIGHT_STYLES[assign]=$unused_highlight
 BUFFER='(A=1)'
 
 expected_region_highlight=(
-  "1 1 $ZSH_HIGHLIGHT_STYLES[reserved-word]" # (
-  "2 4 $ZSH_HIGHLIGHT_STYLES[assign]" # A=1
-  "5 5 $ZSH_HIGHLIGHT_STYLES[reserved-word] 'issue #231'" # )
+  "1 1 reserved-word" # (
+  "2 4 assign" # A=1
+  "4 4 default" # 1
+  "5 5 reserved-word" # )
 )

@@ -57,7 +57,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=($1)
 # $1: data file
 run_test_internal() {
   local -a highlight_zone
-  local unused_highlight='bg=red,underline' # a style unused by anything else, for tests to use
 
   local tests_tempdir="$1"; shift
   local srcdir="$PWD"
@@ -93,6 +92,7 @@ run_test() {
 }
 
 # Process each test data file in test data directory.
+local data_file
 for data_file in ${0:h:h}/highlighters/$1/test-data/*.zsh; do
   run_test "$data_file"
   (( $pipestatus[1] )) && exit 2
