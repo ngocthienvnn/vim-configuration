@@ -1,0 +1,73 @@
+" :bufdo bd
+:set novb
+set belloff=all
+set tags=tags
+set clipboard=unnamedplus
+set paste
+set iminsert=0
+set imdisable
+au BufRead,BufNewFile *.js set filetype=javascript
+set rtp+=~/.fzf
+nnoremap <silent> ,t :FZF<CR>
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+
+"call deoplete#enable()
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"nmap <F2> :TagbarToggle<CR>
+"nmap <F3> :TagbarTogglePause<CR>
+xnoremap p pgvy
+
+set redrawtime=1000000
+set foldmethod=manual
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! Xml call DoPrettyXML()
+
+
+" let g:vdebug_features['max_depth'] = 2048
+
+:highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=grey0
+highlight DbgBreakptLine term=reverse ctermfg=White ctermbg=Green guifg=#ef7c61 guibg=NONE
+highlight DbgBreakptSign term=reverse ctermfg=White ctermbg=Green guifg=green guibg=NONE
+highlight DbgCurrentLine term=reverse ctermfg=White ctermbg=Red guifg=#bcd42a guibg=NONE
+highlight DbgCurrentSign term=reverse ctermfg=White ctermbg=Red guifg=red guibg=NONE
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+" If there are any machine-specific tweaks for Vim, load them from the following file.
+try
+source ~/.vimrc_coc.after
+catch
+" No such file? No problem; just ignore it.
+endtry
+set guifont=Inconsolata\ XL\ 12\,Inconsolata\ 15\,Monaco\ 12
+
+"set guifont=Monospace\ 12
+let g:ag_highlight=1
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <silent> ,b :Buffers<cr>
