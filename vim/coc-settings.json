@@ -12,6 +12,7 @@
   "suggest.keepCompleteOpt": false,
   "coc.source.buffer.enable": false,
   "coc.source.file.enable": false,
-  "coc.source.around.enable": false
+  "coc.source.around.enable": false,
+  "diagnostic.refreshOnInsertMode": true
 
 }
