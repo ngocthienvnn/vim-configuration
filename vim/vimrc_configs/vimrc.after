@@ -8,7 +8,7 @@ set iminsert=0
 set imdisable
 au BufRead,BufNewFile *.js set filetype=javascript
 set rtp+=~/.fzf
-nnoremap <silent> ,t :FZF<CR>
+nnoremap <silent> ,t :GFiles<CR>
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 
@@ -65,9 +65,6 @@ source ~/.vimrc_coc.after
 catch
 " No such file? No problem; just ignore it.
 endtry
-set guifont=Inconsolata\ XL\ 12\,Inconsolata\ 15\,Monaco\ 12
 
-"set guifont=Monospace\ 12
-let g:ag_highlight=1
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+set guifont=Inconsolata\ XL\ 11\,Inconsolata\ 14\,Monaco\ 12
 nnoremap <silent> ,b :Buffers<cr>
