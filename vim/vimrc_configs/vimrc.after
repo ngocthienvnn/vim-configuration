@@ -9,6 +9,7 @@ set imdisable
 au BufRead,BufNewFile *.js set filetype=javascript
 set rtp+=~/.fzf
 nnoremap <silent> ,t :GFiles<CR>
+nnoremap <silent> ,r :FZF<CR>
 set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 
@@ -65,6 +66,15 @@ source ~/.vimrc_coc.after
 catch
 " No such file? No problem; just ignore it.
 endtry
-
+nmap <F8> :TagbarToggle<CR>
 set guifont=Inconsolata\ XL\ 11\,Inconsolata\ 14\,Monaco\ 12
 nnoremap <silent> ,b :Buffers<cr>
+let g:javascript_plugin_jsdoc = 1
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'blade' : 1,
+    \ 'vue' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \}

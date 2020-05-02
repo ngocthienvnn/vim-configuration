@@ -5,4 +5,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'jwalton512/vim-blade'
-
+Plugin 'majutsushi/tagbar'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
