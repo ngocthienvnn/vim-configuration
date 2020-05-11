@@ -67,7 +67,8 @@ catch
 " No such file? No problem; just ignore it.
 endtry
 nmap <F8> :TagbarToggle<CR>
-set guifont=Inconsolata\ XL\ 11\,Inconsolata\ 14\,Monaco\ 12
+noremap <C-c> :call popup_clear() <CR>
+set guifont=Inconsolata\ XL\ 12\,Inconsolata\ 13\,Monaco\ 12
 nnoremap <silent> ,b :Buffers<cr>
 let g:javascript_plugin_jsdoc = 1
 let g:mta_filetypes = {
@@ -78,3 +79,4 @@ let g:mta_filetypes = {
     \ 'xml' : 1,
     \ 'jinja' : 1,
     \}
+

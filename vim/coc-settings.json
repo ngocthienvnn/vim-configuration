@@ -5,7 +5,7 @@
   "intelephense.diagnostics.undefinedClassConstants": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedProperties": false,
-  "suggest.autoTrigger": "none",
+  "suggest.autoTrigger": "trigger",
   "suggest.noselect": false,
   "suggest.enablePreselect": false,
   "tsserver.npm": "/usr/local/bin/npm",
@@ -13,6 +13,8 @@
   "coc.source.buffer.enable": false,
   "coc.source.file.enable": false,
   "coc.source.around.enable": false,
-  "diagnostic.refreshOnInsertMode": true
+  "diagnostic.refreshAfterSave": true,
+  "suggest.maxCompleteItemCount": 10,
+  "suggest.detailField":["abbr"]
 
 }
