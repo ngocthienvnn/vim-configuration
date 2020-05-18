@@ -80,3 +80,4 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \}
 
+inoremap <C-c> <ESC>

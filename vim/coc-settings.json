@@ -13,8 +13,10 @@
   "coc.source.buffer.enable": false,
   "coc.source.file.enable": false,
   "coc.source.around.enable": false,
+  "diagnostic.refreshOnInsertMode": true,
   "diagnostic.refreshAfterSave": true,
   "suggest.maxCompleteItemCount": 10,
-  "suggest.detailField":["abbr"]
+  "suggest.detailField":["abbr"],
+  "phpls.enable": false
 
 }
