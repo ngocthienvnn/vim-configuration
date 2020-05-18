@@ -66,7 +66,7 @@ source ~/.vimrc_coc.after
 catch
 " No such file? No problem; just ignore it.
 endtry
-nmap <F8> :TagbarToggle<CR>
+nmap <F12> :TagbarToggle<CR>
 noremap <C-c> :call popup_clear() <CR>
 set guifont=Inconsolata\ XL\ 12\,Inconsolata\ 13\,Monaco\ 12
 nnoremap <silent> ,b :Buffers<cr>

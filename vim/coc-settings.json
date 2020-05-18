@@ -17,6 +17,5 @@
   "diagnostic.refreshAfterSave": true,
   "suggest.maxCompleteItemCount": 10,
   "suggest.detailField":["abbr"],
-  "phpls.enable": false
 
 }
