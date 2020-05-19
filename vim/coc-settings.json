@@ -5,7 +5,7 @@
   "intelephense.diagnostics.undefinedClassConstants": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedProperties": false,
-  "suggest.autoTrigger": "trigger",
+  "suggest.autoTrigger": "always",
   "suggest.noselect": false,
   "suggest.enablePreselect": false,
   "tsserver.npm": "/usr/local/bin/npm",
@@ -17,5 +17,6 @@
   "diagnostic.refreshAfterSave": true,
   "suggest.maxCompleteItemCount": 10,
   "suggest.detailField":["abbr"],
+  "suggest.snippetIndicator": "►"
 
 }

@@ -55,20 +55,16 @@ command! Xml call DoPrettyXML()
 " let g:vdebug_features['max_depth'] = 2048
 
 :highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=grey0
-highlight DbgBreakptLine term=reverse ctermfg=White ctermbg=Green guifg=#ef7c61 guibg=NONE
-highlight DbgBreakptSign term=reverse ctermfg=White ctermbg=Green guifg=green guibg=NONE
-highlight DbgCurrentLine term=reverse ctermfg=White ctermbg=Red guifg=#bcd42a guibg=NONE
-highlight DbgCurrentSign term=reverse ctermfg=White ctermbg=Red guifg=red guibg=NONE
+" highlight DbgBreakptLine term=reverse ctermfg=White ctermbg=Green guifg=#ef7c61 guibg=NONE
+" highlight DbgBreakptSign term=reverse ctermfg=White ctermbg=Green guifg=green guibg=NONE
+" highlight DbgCurrentLine term=reverse ctermfg=White ctermbg=Red guifg=#bcd42a guibg=NONE
+" highlight DbgCurrentSign term=reverse ctermfg=White ctermbg=Red guifg=red guibg=NONE
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 " If there are any machine-specific tweaks for Vim, load them from the following file.
-try
-source ~/.vimrc_coc.after
-catch
-" No such file? No problem; just ignore it.
-endtry
 nmap <F12> :TagbarToggle<CR>
+
 noremap <C-c> :call popup_clear() <CR>
-set guifont=Inconsolata\ XL\ 12\,Inconsolata\ 13\,Monaco\ 12
+set guifont=Inconsolata\ XL\ 11\,Inconsolata\ 11\,Monaco\ 11
 nnoremap <silent> ,b :Buffers<cr>
 let g:javascript_plugin_jsdoc = 1
 let g:mta_filetypes = {
@@ -80,4 +76,19 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \}
 
-inoremap <C-c> <ESC>
+try
+	source ~/.vimrc_coc.after
+catch
+	" No such file? No problem; just ignore it.
+endtry
+if has("gui_running")
+
+	if has('termguicolors')
+		set termguicolors
+	endif
+	let g:yadr_disable_solarized_enhancements = 1
+	set background=light
+	let g:gruvbox_material_background = 'soft'
+	colorscheme gruvbox-material
+	let g:airline_theme = 'gruvbox_material'
+endif

@@ -8,6 +8,4 @@ Plugin 'jwalton512/vim-blade'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/yajs.vim'
-"Plugin 'leafOfTree/vim-vue-plugin'
-
-
+Plugin 'sainnhe/gruvbox-material'
