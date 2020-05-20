@@ -3,7 +3,7 @@
 set belloff=all
 set tags=tags
 set clipboard=unnamedplus
-set paste
+" set paste
 set iminsert=0
 set imdisable
 au BufRead,BufNewFile *.js set filetype=javascript
@@ -76,11 +76,6 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \}
 
-try
-	source ~/.vimrc_coc.after
-catch
-	" No such file? No problem; just ignore it.
-endtry
 if has("gui_running")
 	if has('termguicolors')
 		set termguicolors
@@ -91,3 +86,8 @@ if has("gui_running")
 	colorscheme gruvbox-material
 	let g:airline_theme = 'gruvbox_material'
 endif
+try
+	source ~/.vimrc_coc.after
+catch
+	" No such file? No problem; just ignore it.
+endtry
