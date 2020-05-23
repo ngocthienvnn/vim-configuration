@@ -91,3 +91,5 @@ try
 catch
 	" No such file? No problem; just ignore it.
 endtry
+
+autocmd Filetype vue setlocal sw=3 ts=3
