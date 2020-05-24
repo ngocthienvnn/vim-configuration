@@ -93,3 +93,4 @@ catch
 endtry
 
 autocmd Filetype vue setlocal sw=3 ts=3
+let g:fzf_preview_window = ''
