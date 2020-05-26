@@ -1,11 +1,8 @@
 " :bufdo bd
 :set novb
 set belloff=all
-set tags=tags
 set clipboard=unnamedplus
 " set paste
-set iminsert=0
-set imdisable
 au BufRead,BufNewFile *.js set filetype=javascript
 set rtp+=~/.fzf
 nnoremap <silent> ,t :GFiles<CR>
@@ -54,19 +51,19 @@ command! Xml call DoPrettyXML()
 
 " let g:vdebug_features['max_depth'] = 2048
 
-:highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=grey0
+" :highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=grey0
 " highlight DbgBreakptLine term=reverse ctermfg=White ctermbg=Green guifg=#ef7c61 guibg=NONE
 " highlight DbgBreakptSign term=reverse ctermfg=White ctermbg=Green guifg=green guibg=NONE
 " highlight DbgCurrentLine term=reverse ctermfg=White ctermbg=Red guifg=#bcd42a guibg=NONE
 " highlight DbgCurrentSign term=reverse ctermfg=White ctermbg=Red guifg=red guibg=NONE
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+" command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 " If there are any machine-specific tweaks for Vim, load them from the following file.
 nmap <F12> :TagbarToggle<CR>
 
 noremap <C-c> :call popup_clear() <CR>
 set guifont=Inconsolata\ XL\ 11\,Inconsolata\ 11\,Monaco\ 11
 nnoremap <silent> ,b :Buffers<cr>
-let g:javascript_plugin_jsdoc = 1
+" let g:javascript_plugin_jsdoc = 1
 let g:mta_filetypes = {
     \ 'html' : 1,
     \ 'blade' : 1,

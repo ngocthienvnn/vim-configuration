@@ -13,11 +13,14 @@
   "coc.source.buffer.enable": false,
   "coc.source.file.enable": false,
   "coc.source.around.enable": false,
-  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.refreshOnInsertMode": false,
+  "coc.source.ultisnips.priority": 9999,
   "diagnostic.refreshAfterSave": true,
   "suggest.maxCompleteItemCount": 10,
-  "suggest.detailField":"menu",
+  "suggest.detailField":"preview",
   "suggest.floatEnable": false,
-  "suggest.snippetIndicator": "►"
+  "suggest.snippetIndicator": "►",
+  "diagnostic.messageTarget":"echo",
+  "signature.target":"echo"
 
 }
