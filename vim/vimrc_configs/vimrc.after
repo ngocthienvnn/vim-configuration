@@ -91,3 +91,4 @@ endtry
 
 autocmd Filetype vue setlocal sw=3 ts=3
 let g:fzf_preview_window = ''
+let g:coc_disable_transparent_cursor=1
