@@ -77,11 +77,11 @@ if has("gui_running")
 	if has('termguicolors')
 		set termguicolors
 	endif
-	let g:yadr_disable_solarized_enhancements = 1
-	set background=light
-	let g:gruvbox_material_background = 'soft'
-	colorscheme gruvbox-material
-	let g:airline_theme = 'gruvbox_material'
+	" let g:yadr_disable_solarized_enhancements = 1
+	" set background=light
+	" let g:gruvbox_material_background = 'soft'
+	" colorscheme gruvbox-material
+	" let g:airline_theme = 'gruvbox_material'
 endif
 try
 	source ~/.vimrc_coc.after
