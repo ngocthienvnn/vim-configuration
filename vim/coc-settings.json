@@ -20,6 +20,8 @@
   "suggest.floatEnable": false,
   "suggest.snippetIndicator": "►",
   "diagnostic.messageTarget":"echo",
-  "signature.target":"echo"
+  "signature.target":"echo",
+  "diagnostic.displayByAle": true,
+  "coc.preferences.colorSupport": false
 
 }

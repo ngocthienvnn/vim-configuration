@@ -92,3 +92,8 @@ endtry
 autocmd Filetype vue setlocal sw=3 ts=3
 let g:fzf_preview_window = ''
 let g:coc_disable_transparent_cursor=1
+let b:ale_linters = ['php', 'phpcs', 'eslint']
+
+let b:ale_linter_aliases =  ['vue', 'javascript', 'css']
+let g:ale_lint_on_insert_leave = 1
+
