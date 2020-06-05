@@ -74,10 +74,10 @@ let g:mta_filetypes = {
     \}
 
 if has("gui_running")
-	if has('termguicolors')
-		set termguicolors
-	endif
-	" let g:yadr_disable_solarized_enhancements = 1
+  if has('termguicolors')
+    set termguicolors
+  endif
+  " let g:yadr_disable_solarized_enhancements = 1
 	" set background=light
 	" let g:gruvbox_material_background = 'soft'
 	" colorscheme gruvbox-material
@@ -97,3 +97,11 @@ let b:ale_linters = ['php', 'phpcs', 'eslint']
 let b:ale_linter_aliases =  ['vue', 'javascript', 'css']
 let g:ale_lint_on_insert_leave = 1
 
+"  hi! LineNR guifg=#004C60 gui=bold guibg=Black ctermfg=146
+
+"  hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
+" set background=dark
+
+" for kitty terminal with solarized theme
+highlight VertSplit guibg=NONE guifg=NONE ctermbg=0 ctermfg=0
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
