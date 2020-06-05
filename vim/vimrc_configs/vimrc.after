@@ -103,5 +103,5 @@ let g:ale_lint_on_insert_leave = 1
 " set background=dark
 
 " for kitty terminal with solarized theme
-highlight VertSplit guibg=NONE guifg=NONE ctermbg=0 ctermfg=0
+highlight VertSplit term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
